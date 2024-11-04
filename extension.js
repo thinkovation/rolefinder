@@ -39,7 +39,7 @@ function activate(context) {
 				}
 			});
 		}
-	
+		outputChannel.appendLine(`Total HasRight calls found: ${matchCount}`);
 		// Output results to the channel
 		if (matchesArray.length === 0) {
 			outputChannel.appendLine("Alas, no matches found.");
@@ -48,6 +48,10 @@ function activate(context) {
 			matchesArray.forEach(({ match, file, line }, index) => {
 				outputChannel.appendLine(`Match ${index + 1}: ${match} found in ${file} on line ${line}`);
 			});
+			const csvContent = matchesArray.map(match => `${match.file},${match.line},"${match.match}"`).join('\n');
+			outputChannel.appendLine("CSV -------------------------------------------------------------------------------------------")
+			outputChannel.appendLine(csvContent)
+
 		}
 	});
 	

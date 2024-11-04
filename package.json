@@ -2,7 +2,7 @@
   "name": "rolefinder",
   "displayName": "RoleFinder",
   "description": "A private extension to find roles referenced in my code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.95.0"
   },
